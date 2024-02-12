@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        let pC = 0;
+        let cC = 0;
+
+        playGame();
+        
+        
+
+        function playGame(){
+            for(let i = 1; i<6; i++){   
+                let pS = getPlayerChoise(i);
+                console.log(pS);
+                let cS = getComputerChoice();
+                playRound(pS, cS, pC, cC);
+                console.log(pC, cC); 
+            }
+
+            if(pC > cC){
+                console.log("Congrats, you've beaten");
+            } else if(pC < cC){
+                console.log("Next time would be, you've loose");
+            }else
+                console.log("TIE");
+        
+        }        
+            
+        function playRound(playerSelection, computerSelection, playerCount, computerCount){            
+            if( playerSelection === computerSelection)
+                return console.log("TIE");
+            else if (playerSelection === "ROCKS" && computerSelection === "PAPER") {
+                cC++;
+                return console.log("LOOSE, PAPER BEATS ROCKS");
+            } else if (playerSelection === "ROCKS" && computerSelection === "SCISSORS") {
+                pC++;
+                return console.log("WIN, ROCKS BEATS SCISSORS");
+            } else if (playerSelection === "PAPER" && computerSelection === "ROCKS") {
+                pC++;
+                return console.log("WIN, PAPER BEATS ROCKS");
+            } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+                cC++;
+                return console.log("LOOSE, SCISSORS BEATS PAPER");
+            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCKS") {
+                cC++;
+                return console.log("LOOSE, ROCKS BEATS SCISSORS");
+            } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+                pC++;
+                return console.log("WIN, SCISSORS BEATS PAPER");
+            }
+        }
+
+        function getComputerChoice(){
+            let randomNum = Math.floor(1 + Math.random() * 3) ;  /*Generates a random number between 1 and 3*/    
+            console.log(randomNum);          
+            if( randomNum === 1)
+                return "ROCKS";
+            else if (randomNum === 2) {
+                return "PAPER";
+            } else {
+                return "SCISSORS"; 
+            }          
+        }
+
+        function getPlayerChoise(roundCount){
+            return prompt("Round " + roundCount + "\nWhat's your choise: ").toUpperCase();                       
+        }
+
+    </script>
+</body>
+</html>
