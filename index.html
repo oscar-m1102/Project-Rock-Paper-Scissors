@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
 <body>
+
     <script>
 
         
@@ -39,21 +40,21 @@
         function playRound(playerSelection, computerSelection, playerCount, computerCount){            
             if( playerSelection === computerSelection)
                 return console.log("TIE");
-            else if (playerSelection === "ROCKS" && computerSelection === "PAPER") {
+            else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
                 cC++;
-                return console.log("LOOSE, PAPER BEATS ROCKS");
-            } else if (playerSelection === "ROCKS" && computerSelection === "SCISSORS") {
+                return console.log("LOOSE, PAPER BEATS ROCK");
+            } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
                 pC++;
-                return console.log("WIN, ROCKS BEATS SCISSORS");
-            } else if (playerSelection === "PAPER" && computerSelection === "ROCKS") {
+                return console.log("WIN, ROCK BEATS SCISSORS");
+            } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
                 pC++;
                 return console.log("WIN, PAPER BEATS ROCKS");
             } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
                 cC++;
                 return console.log("LOOSE, SCISSORS BEATS PAPER");
-            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCKS") {
+            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
                 cC++;
-                return console.log("LOOSE, ROCKS BEATS SCISSORS");
+                return console.log("LOOSE, ROCK BEATS SCISSORS");
             } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
                 pC++;
                 return console.log("WIN, SCISSORS BEATS PAPER");
@@ -64,7 +65,7 @@
             let randomNum = Math.floor(1 + Math.random() * 3) ;  /*Generates a random number between 1 and 3*/    
             console.log(randomNum);          
             if( randomNum === 1)
-                return "ROCKS";
+                return "ROCK";
             else if (randomNum === 2) {
                 return "PAPER";
             } else {
